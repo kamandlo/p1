@@ -1,0 +1,105 @@
+#! /usr/bin/python3
+import os
+import shutil
+
+
+
+print("###############################")
+print("#  *                      *   #")
+print("#  *                      *   #")
+print("#  *                      *   #")
+print("#  *     p y t h o n      *   #")
+print("#  *                      *   #")
+print("#  *                      *   #")
+print("#  *                      *   #")
+print("###############################")
+
+name = input("please enter your name: ")
+favorite = input("please enter your favorite job (DevOps): ")
+keep = "yes"
+while keep == "yes":
+    if favorite == "DevOps":
+        print ("For devops you need to know these technologies.\
+        1-Linux\
+        2-Docker\
+        3-python")
+        Linux = input ("Do you know linux? (yes or no): ")
+        if Linux == "yes":
+            print ( "Answer a few questions about Linux.")
+            q1 = input (" Navigation command for Linux directory (cd):  ")
+            q2 = input ("Directory build command (mkdir):  ")
+            q = 0
+            if q1 == "cd" and q2 == "mkdir":
+                q = q + 2
+                print ("The number of your correct answers", + q )
+            elif q1 == "cd" or q2 == "mkdir":
+                q = q + 1
+                print ("The number of your correct answers", + q )
+            elif q1 != "cd" and q2 != "mkdir":
+                q = 0
+                print ("The number of your correct answers", + q )
+            else:
+                print ("you do not about Linux")
+
+    else:
+        print ("@@@@ We only have DevOps questions. @@@@")
+    keep = input ("Do you want to answer the question again? (yes or no): ")
+
+print ("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+print ("@   now                                  @")
+print ("@      we                                @")
+print ("@        are                LINUX        @")
+print ("@           working                      @")
+print ("@                 with                   @")
+print ("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+
+path = "/tmp/DevOps"
+
+question = input ("If you want to back up in /tmp/DevOps , please enter yes: ")
+
+if question == "yes" : 
+    try:
+        os.mkdir(path)
+    except OSError:
+        print ("Creation of the directory %s failed" % path)
+    else:
+        print ("Successfully created the directory %s " % path)
+else:
+    print ( " you do not directory for back up ")
+
+
+print ( " We ask you to create a file named (  backup  ) in the path ( /tmp/DevOps ) we have chosen for you " )
+
+question1 = input (" if you create file please enter yes : ")
+
+if question1 == "yes" :
+    File = open('/tmp/DevOps/backup', 'a')
+    File.write(input ("please enter your user name: ") )
+    File.write(input ("please enter your password"))
+    File.close()
+    print ( "Your profile has been entered")
+else:
+    print( "One job went wrong.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
